@@ -3,12 +3,16 @@ import React from 'react'
 
 interface Props {
     name?: string,
-    style? : string
+    placeholder? : string,
+    style? : string,
 }
 
-const Input = ({name, style}: Props) => {
+const Input = ({name, placeholder, style}: Props) => {
   return (
-        <input className={style} name={name} type="text" placeholder={name}/>
+        <div>
+          <p className="text-sm ml-3 mb-1">{name}</p>
+          <input className={`${style} placeholder:text-sm`} name={name} type="text" placeholder={placeholder}/>
+        </div>
   )
 }
 
